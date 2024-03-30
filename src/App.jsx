@@ -27,12 +27,12 @@ function App() {
 	};
 
 	return (
-		<main className="w-11/12 lg:w-10/12 mx-auto py-10 lg:p-20">
+		<main className="w-11/12 lg:w-10/12 mx-auto py-10 lg:p-20 h-full min-h-screen ">
 			<h2 className="text-xl lg:text-2xl font-bold mb-10">
 				CNN.com - RSS Channel - App International Edition
 			</h2>
 			{photos && photos.length > 0 && (
-				<section className=" flex flex-col justify-center items-center gap-16">
+				<section className=" flex flex-col justify-center items-center gap-16 h-full">
 					<ul className=" grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6 w-full h-full grid-flow-row">
 						{photos.map((photo, index) => (
 							<li
