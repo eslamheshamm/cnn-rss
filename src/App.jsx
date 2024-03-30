@@ -33,25 +33,7 @@ function App() {
 			</h2>
 			{photos && photos.length > 0 && (
 				<section className=" flex flex-col justify-center items-center gap-16 h-full">
-					<ul className=" grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6 w-full h-full grid-flow-row">
-						{photos.map((photo, index) => (
-							<li
-								key={index++}
-								className={`relative w-full h-full max-h-80 ${
-									index === 0 && "col-span-2"
-								} ${index === 6 && "lg:col-span-2"}`}
-							>
-								<img
-									className="w-full h-full object-cover"
-									src={photo.thumbnailUrl}
-									alt={photo.title}
-								/>
-								<h3 className=" absolute text-xs bottom-4 lg:text-base  lg:bottom-10 px-4">
-									{photo.title}
-								</h3>
-							</li>
-						))}
-					</ul>
+					<NewsList photos={photos} />
 					<button
 						className=" border-2 border-black font-bold px-8 py-3 "
 						onClick={handleLoadMore}
@@ -65,3 +47,29 @@ function App() {
 }
 
 export default App;
+
+const NewsList = ({ photos }) => {
+	return (
+		<>
+			<ul className=" grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6 w-full h-full auto-rows-fr">
+				{photos?.map((photo, index) => (
+					<li
+						key={index++}
+						className={`relative w-full h-full max-h-80 ${
+							index === 0 && "col-span-2"
+						} ${index === 6 && "lg:col-span-2"}`}
+					>
+						<img
+							className="w-full h-full object-cover"
+							src={photo.thumbnailUrl}
+							alt={photo.title}
+						/>
+						<h3 className=" absolute text-xs bottom-4 lg:text-base  lg:bottom-10 px-4">
+							{photo.title}
+						</h3>
+					</li>
+				))}
+			</ul>
+		</>
+	);
+};
