@@ -55,7 +55,7 @@ const NewsList = ({ photos }) => {
 				{photos?.map((photo, index) => (
 					<li
 						key={index++}
-						className={`relative w-full h-full max-h-80 ${
+						className={`relative w-full h-full max-h-80 bg-gray-50 ${
 							index === 0 && "col-span-2"
 						} ${index === 6 && "lg:col-span-2"}`}
 					>
