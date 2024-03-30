@@ -10,7 +10,7 @@ function App() {
 
 		axios
 			.get(
-				`http://jsonplaceholder.typicode.com/photos?_start=${start}&_limit=7`
+				`https://jsonplaceholder.typicode.com/photos?_start=${start}&_limit=7`
 			)
 			.then((response) => {
 				setPhotos((prevPhotos) => [...prevPhotos, ...response.data]);
